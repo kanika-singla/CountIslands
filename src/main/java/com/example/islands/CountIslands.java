@@ -11,7 +11,14 @@ public class CountIslands {
             int visited[][] = new int [rows][columns];
             int islands = 0;
             // Edge case
-            if(rows==1 && columns==1) { return input[0][0]; }
+            if(rows==1 && columns==1) {
+                    if(input[0][0] == 1) {
+                            return 1;
+                    } else {
+                            // Ignoring non-one element, we will consider that as 0
+                            return 0;
+                    }
+            }
 
             for(int i=0; i<rows; i++) {
                 for(int j=0; j<columns; j++) {
